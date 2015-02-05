@@ -1,0 +1,20 @@
+LAYER {
+        13-21 {
+        NAME: 'topo_mauricie'
+        TYPE: LINE
+        METADATA {{
+              "wms_title" "topo_mauricie"
+              "wms_name"   "topo_mauricie"
+              "wms_include_items" "all"
+        }}
+        @connection
+        @layerconfig
+                DATA:"geom from topo_mauricie using unique fid using srid=4326"
+         CLASS {
+            STYLE {
+                      COLOR: '#888B93'
+                  WIDTH: 0.8
+              }
+        }
+    }
+}
