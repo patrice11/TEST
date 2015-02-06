@@ -7,4 +7,5 @@ ORDER {
  6: groups/roads.layer
  7: groups/cities.layer
  8: groups/remabec.layer
+ 9: groups/peuplement.layer
 }

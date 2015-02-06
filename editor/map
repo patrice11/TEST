@@ -9,13 +9,13 @@ MAP {
     UNITS: meters
     EXTENT:-8778424.9155116 5654582.5868788 -7582862.5076042 6586766.1474996
     IMAGECOLOR: '#C6E2F2'
-    SHAPEPATH: '../pdata/natural_earth/'
+    SHAPEPATH: '../../../../pdata/natural_earth/'
     WEB {
         METADATA {{
             "ows_enable_request" "*"
             "wms_srs" "EPSG:900913 EPSG:4326"
             "labelcache_map_edge_buffer" "-10"
-            "wms_title" "Remabec"
+            "wms_title" "remabec2"
         }}
         IMAGEPATH: '/tmp/ms_tmp/'
         IMAGEURL: '/ms_tmp/'
