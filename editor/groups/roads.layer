@@ -1,5 +1,5 @@
 LAYER {
-    6-16 {
+    6-10 {
         NAME: 'roads'
         TYPE: LINE
         @layerconfig
@@ -7,13 +7,13 @@ LAYER {
         CLASSITEM: 'type'
  	    LABELITEM: 'name'
         CLASS {
-            6-16 {
+            6-10 {
                 EXPRESSION: 'Major Highway'
                 STYLE {
                     COLOR: '#919191'
                 }
             	LABEL {
-                    8-16 {
+                    8-10 {
                         COLOR: 255 255 255
                 	    OUTLINECOLOR: '#919191'
                     	OUTLINEWIDTH: 2
@@ -29,13 +29,13 @@ LAYER {
             }
         }
     	CLASS {
-            7-16 {
+            7-10 {
                 EXPRESSION: 'Secondary Highway'
                 STYLE {
                     COLOR: '#DDA0DD'
                 }
             	LABEL {
-                    8-16 {
+                    8-10 {
                 	    COLOR: 255 255 255
                 	    OUTLINECOLOR: '#DDA0DD'
                         OUTLINEWIDTH: 2
@@ -51,7 +51,7 @@ LAYER {
             }
         }
     	CLASS {
-            7-16 {
+            7-10 {
                 STYLE {
                     COLOR: '#DDA0DD'
                 }

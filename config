@@ -1,11 +1,12 @@
 ORDER {
- 1: groups/ocean.layer
- 2: groups/land.layer
- 3: groups/urban.layer
- 4: groups/water.layer
+ 1: groups/land.layer
+ 2: groups/urban.layer
+ 3: groups/water.layer
+ 4: groups/ocean.layer
  5: groups/admin.layer
  6: groups/roads.layer
  7: groups/cities.layer
  8: groups/remabec.layer
  9: groups/peuplement.layer
+ 10: groups/8-12.layer
 }

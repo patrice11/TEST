@@ -4,4 +4,42 @@ SYMBOL
     points 1 1 end
     filled true
 END
+SYMBOL
+  NAME "hatchsymbol"
+  TYPE hatch
+END
+SYMBOL
+  NAME "circlef"
+  TYPE ellipse
+  FILLED true
+  POINTS
+    1 1
+  END # POINTS
+END # SYMBOL
 
+SYMBOL
+  NAME "P"
+  TYPE truetype
+  FONT "arial"
+  CHARACTER "P"
+END # SYMBOL
+
+SYMBOL
+  NAME "vertline"
+  TYPE vector
+  FILLED true
+  POINTS
+    0 0
+    0 10
+    2.8 10
+    2.8 0
+    0 0
+  END # POINTS
+  ANCHORPOINT 0.5 0
+END # SYMBOL
+
+SYMBOL
+  NAME "o-flag-trans"
+  TYPE pixmap
+  IMAGE "o-flag-trans.png"
+END # SYMBOL

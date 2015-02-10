@@ -1,0 +1,42 @@
+LAYER {
+        8-16 {
+        NAME: 'uaf_region_04'
+        METADATA {{
+              "wms_title" "uaf_region_04"
+              "wms_name"   "uaf_region_04"
+              "wms_include_items" "all"
+        }}
+        @connection
+        @layerconfig
+        TYPE: POLYGON
+                DATA:"geom from uaf_region_04 using unique fid using srid=4326"
+         CLASS {
+            STYLE {
+            COLOR: '#C2F1C2'
+            OUTLINECOLOR: '#55AA55'
+            WIDTH: 1
+            OPACITY: 50
+            }
+        }
+    }
+}
+LAYER {
+        8-12 {
+        NAME: 'lte_mauricie'
+        METADATA {{
+              "wms_title" "lte_mauricie"
+              "wms_name"   "lte_mauricie"
+              "wms_include_items" "all"
+        }}
+        @connection
+        @layerconfig
+        TYPE: POLYGON
+                DATA:"geom from lte_mauricie using unique fid using srid=4326"
+         CLASS {
+             STYLE {
+             OUTLINECOLOR: 0 0 0
+             WIDTH: 3
+            }
+        }
+    }
+}

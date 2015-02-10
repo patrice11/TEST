@@ -1,4 +1,4 @@
-LAYER {
+/*LAYER {
     5-16 {
         NAME: 'urban_areas'
         TYPE: POLYGON
@@ -13,4 +13,4 @@ LAYER {
             }
         }
     }
-}
+}*/
