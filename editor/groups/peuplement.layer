@@ -1,0 +1,21 @@
+LAYER {
+        13-16 {
+        NAME: 'peuplement_global_mauricie'
+        TYPE: POLYGON    
+        METADATA {{
+              "wms_title" "peuplement_global_mauricie"
+              "wms_name"   "peuplement_global_mauricie"
+              "wms_include_items" "all"
+        }}
+        @connection
+        @layerconfig
+        DATA: "geom from peuplement_global_mauricie using unique fid using srid=4326" 
+        CLASSITEM: 'dsu_code'
+        CLASS {
+            EXPRESSION:('[dsu_code]' ='1A'OR'[dsu_code]' ='1')
+            STYLE {
+                 COLOR: '#FFFF00'              
+            }
+        }
+    }
+}

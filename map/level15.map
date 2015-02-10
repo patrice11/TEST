@@ -471,3 +471,35 @@
             END
         END
     END
+    LAYER
+        MAXSCALEDENOM 32768
+        MINSCALEDENOM 16384
+        NAME 'peuplement_global_mauricie15'
+        TYPE POLYGON
+        METADATA
+            "wms_title" "peuplement_global_mauricie"
+            "wms_name"   "peuplement_global_mauricie"
+            "wms_include_items" "all"
+        END
+        CONNECTION "host=localhost dbname=remabec user=synergis password=Syn3rGis! port=5432"
+        CONNECTIONTYPE POSTGIS
+        GROUP 'default'
+        STATUS ON
+        PROJECTION
+            'init=epsg:4326'
+        END
+        PROCESSING 'LABEL_NO_CLIP=ON'
+        PROCESSING 'CLOSE_CONNECTION=DEFER'
+        METADATA
+            "wms_include_items" "all"
+        END
+        TEMPLATE 'blank.html'
+        DATA "geom from peuplement_global_mauricie using unique fid using srid=4326"
+        CLASSITEM 'dsu_code'
+        CLASS
+            EXPRESSION ('[dsu_code]' ='1A'OR'[dsu_code]' ='1')
+            STYLE
+                COLOR '#FFFF00'
+            END
+        END
+    END
