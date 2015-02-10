@@ -1,5 +1,5 @@
 LAYER {
-        8-16 {
+        7-12 {
         NAME: 'uaf_region_04'
         METADATA {{
               "wms_title" "uaf_region_04"
@@ -21,7 +21,7 @@ LAYER {
     }
 }
 LAYER {
-        8-12 {
+        7-12 {
         NAME: 'lte_mauricie'
         METADATA {{
               "wms_title" "lte_mauricie"

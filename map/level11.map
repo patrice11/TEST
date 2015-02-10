@@ -176,6 +176,55 @@
     LAYER
         MAXSCALEDENOM 524288
         MINSCALEDENOM 262144
+        NAME 'roads11'
+        TYPE LINE
+        GROUP 'default'
+        STATUS ON
+        PROJECTION
+            'init=epsg:4326'
+        END
+        PROCESSING 'LABEL_NO_CLIP=ON'
+        PROCESSING 'CLOSE_CONNECTION=DEFER'
+        METADATA
+            "wms_include_items" "all"
+        END
+        TEMPLATE 'blank.html'
+        DATA '10m_cultural/ne_10m_roads'
+        CLASSITEM 'type'
+        LABELITEM 'name'
+        CLASS
+            EXPRESSION 'Major Highway'
+            STYLE
+                COLOR '#00EB00'
+            END
+            LABEL
+                COLOR 255 255 255
+                OUTLINECOLOR '#00EB00'
+                OUTLINEWIDTH 2
+                FONT 'scb'
+                TYPE truetype
+                SIZE 7
+                REPEATDISTANCE 100
+                MINDISTANCE 300
+                POSITION AUTO
+                PARTIALS FALSE
+            END
+        END
+        CLASS
+            EXPRESSION 'Secondary Highway'
+            STYLE
+                COLOR '#FF0000'
+            END
+        END
+        CLASS
+            STYLE
+                COLOR '#FF0000'
+            END
+        END
+    END
+    LAYER
+        MAXSCALEDENOM 524288
+        MINSCALEDENOM 262144
         NAME 'populated_places11'
         TYPE POINT
         GROUP 'default'

@@ -321,7 +321,7 @@
         CLASS
             EXPRESSION 'Major Highway'
             STYLE
-                COLOR '#919191'
+                COLOR '#00EB00'
             END
         END
     END

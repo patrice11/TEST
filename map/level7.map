@@ -334,18 +334,18 @@
         CLASS
             EXPRESSION 'Major Highway'
             STYLE
-                COLOR '#919191'
+                COLOR '#00EB00'
             END
         END
         CLASS
             EXPRESSION 'Secondary Highway'
             STYLE
-                COLOR '#DDA0DD'
+                COLOR '#FF0000'
             END
         END
         CLASS
             STYLE
-                COLOR '#DDA0DD'
+                COLOR '#FF0000'
             END
         END
     END
@@ -405,6 +405,70 @@
                 OUTLINEWIDTH 1
                 COLOR '#AAAAAA'
                 SIZE 6
+            END
+        END
+    END
+    LAYER
+        MAXSCALEDENOM 8388608
+        MINSCALEDENOM 4194304
+        NAME 'uaf_region_047'
+        METADATA
+            "wms_title" "uaf_region_04"
+            "wms_name"   "uaf_region_04"
+            "wms_include_items" "all"
+        END
+        CONNECTION "host=localhost dbname=remabec user=synergis password=Syn3rGis! port=5432"
+        CONNECTIONTYPE POSTGIS
+        GROUP 'default'
+        STATUS ON
+        PROJECTION
+            'init=epsg:4326'
+        END
+        PROCESSING 'LABEL_NO_CLIP=ON'
+        PROCESSING 'CLOSE_CONNECTION=DEFER'
+        METADATA
+            "wms_include_items" "all"
+        END
+        TEMPLATE 'blank.html'
+        TYPE POLYGON
+        DATA "geom from uaf_region_04 using unique fid using srid=4326"
+        CLASS
+            STYLE
+                COLOR '#C2F1C2'
+                OUTLINECOLOR '#55AA55'
+                WIDTH 1
+                OPACITY 50
+            END
+        END
+    END
+    LAYER
+        MAXSCALEDENOM 8388608
+        MINSCALEDENOM 4194304
+        NAME 'lte_mauricie7'
+        METADATA
+            "wms_title" "lte_mauricie"
+            "wms_name"   "lte_mauricie"
+            "wms_include_items" "all"
+        END
+        CONNECTION "host=localhost dbname=remabec user=synergis password=Syn3rGis! port=5432"
+        CONNECTIONTYPE POSTGIS
+        GROUP 'default'
+        STATUS ON
+        PROJECTION
+            'init=epsg:4326'
+        END
+        PROCESSING 'LABEL_NO_CLIP=ON'
+        PROCESSING 'CLOSE_CONNECTION=DEFER'
+        METADATA
+            "wms_include_items" "all"
+        END
+        TEMPLATE 'blank.html'
+        TYPE POLYGON
+        DATA "geom from lte_mauricie using unique fid using srid=4326"
+        CLASS
+            STYLE
+                OUTLINECOLOR 0 0 0
+                WIDTH 3
             END
         END
     END

@@ -322,7 +322,7 @@ LAYER {
 
 
 LAYER {
-    6-10 {
+    6-16 {
         NAME: 'roads'
         TYPE: LINE
         @layerconfig
@@ -330,15 +330,15 @@ LAYER {
         CLASSITEM: 'type'
  	    LABELITEM: 'name'
         CLASS {
-            6-10 {
+            6-16 {
                 EXPRESSION: 'Major Highway'
                 STYLE {
-                    COLOR: '#919191'
+                    COLOR: '#00EB00'
                 }
             	LABEL {
-                    8-10 {
+                    8-16 {
                         COLOR: 255 255 255
-                	    OUTLINECOLOR: '#919191'
+                        OUTLINECOLOR: '#00EB00'
                     	OUTLINEWIDTH: 2
                 	    FONT: 'scb'
                 	    TYPE: truetype
@@ -352,15 +352,15 @@ LAYER {
             }
         }
     	CLASS {
-            7-10 {
+            7-16 {
                 EXPRESSION: 'Secondary Highway'
                 STYLE {
-                    COLOR: '#DDA0DD'
+                    COLOR: '#FF0000'
                 }
             	LABEL {
                     8-10 {
                 	    COLOR: 255 255 255
-                	    OUTLINECOLOR: '#DDA0DD'
+                	    OUTLINECOLOR: '#FF0000'
                         OUTLINEWIDTH: 2
                 	    FONT: 'scb'
                 	    TYPE: truetype
@@ -374,9 +374,9 @@ LAYER {
             }
         }
     	CLASS {
-            7-10 {
+            7-16 {
                 STYLE {
-                    COLOR: '#DDA0DD'
+                    COLOR: '#FF0000'
                 }
             }
         }
@@ -511,7 +511,7 @@ LAYER {
         CLASS {
             STYLE {
                 OUTLINECOLOR: '#061439'
-                WIDTH: 1.5
+                WIDTH: 1
               }
         }
     }
@@ -591,7 +591,7 @@ LAYER {
         }
     }
 }
-LAYER {
+/*LAYER {
         13-16 {
         NAME: 'raif_mauricie'
         TYPE: POLYGON    
@@ -612,31 +612,12 @@ LAYER {
             }
         }   
     }
-}
-LAYER {
-        13-16 {
-        NAME: 'uaf_region_04'
-        METADATA {{
-              "wms_title" "uaf_region_04"
-              "wms_name"   "uaf_region_04"
-              "wms_include_items" "all"
-        }}
-        @connection
-        @layerconfig
-        TYPE: POLYGON
-                DATA:"geom from uaf_region_04 using unique fid using srid=4326"
-         CLASS {
-             STYLE {
-            OUTLINECOLOR: '#55AA55'
-            WIDTH: 3.5
-            }
-        }
-    }
-}
+}*/
+
 
 
 LAYER {
-        8-16 {
+        7-12 {
         NAME: 'uaf_region_04'
         METADATA {{
               "wms_title" "uaf_region_04"
@@ -658,7 +639,7 @@ LAYER {
     }
 }
 LAYER {
-        8-12 {
+        7-12 {
         NAME: 'lte_mauricie'
         METADATA {{
               "wms_title" "lte_mauricie"

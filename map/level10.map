@@ -333,11 +333,11 @@
         CLASS
             EXPRESSION 'Major Highway'
             STYLE
-                COLOR '#919191'
+                COLOR '#00EB00'
             END
             LABEL
                 COLOR 255 255 255
-                OUTLINECOLOR '#919191'
+                OUTLINECOLOR '#00EB00'
                 OUTLINEWIDTH 2
                 FONT 'scb'
                 TYPE truetype
@@ -351,11 +351,11 @@
         CLASS
             EXPRESSION 'Secondary Highway'
             STYLE
-                COLOR '#DDA0DD'
+                COLOR '#FF0000'
             END
             LABEL
                 COLOR 255 255 255
-                OUTLINECOLOR '#DDA0DD'
+                OUTLINECOLOR '#FF0000'
                 OUTLINEWIDTH 2
                 FONT 'scb'
                 TYPE truetype
@@ -368,7 +368,7 @@
         END
         CLASS
             STYLE
-                COLOR '#DDA0DD'
+                COLOR '#FF0000'
             END
         END
     END

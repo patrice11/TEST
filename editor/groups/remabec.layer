@@ -58,7 +58,7 @@ LAYER {
         CLASS {
             STYLE {
                 OUTLINECOLOR: '#061439'
-                WIDTH: 1.5
+                WIDTH: 1
               }
         }
     }
@@ -138,7 +138,7 @@ LAYER {
         }
     }
 }
-LAYER {
+/*LAYER {
         13-16 {
         NAME: 'raif_mauricie'
         TYPE: POLYGON    
@@ -159,24 +159,5 @@ LAYER {
             }
         }   
     }
-}
-LAYER {
-        13-16 {
-        NAME: 'uaf_region_04'
-        METADATA {{
-              "wms_title" "uaf_region_04"
-              "wms_name"   "uaf_region_04"
-              "wms_include_items" "all"
-        }}
-        @connection
-        @layerconfig
-        TYPE: POLYGON
-                DATA:"geom from uaf_region_04 using unique fid using srid=4326"
-         CLASS {
-             STYLE {
-            OUTLINECOLOR: '#55AA55'
-            WIDTH: 3.5
-            }
-        }
-    }
-}
+}*/
+
