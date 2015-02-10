@@ -4301,38 +4301,6 @@ MAP
             END
         END
     END
-    LAYER
-        MAXSCALEDENOM 131072
-        MINSCALEDENOM 65536
-        NAME 'peuplement_global_mauricie13'
-        TYPE POLYGON
-        METADATA
-            "wms_title" "peuplement_global_mauricie"
-            "wms_name"   "peuplement_global_mauricie"
-            "wms_include_items" "all"
-        END
-        CONNECTION "host=localhost dbname=remabec user=synergis password=Syn3rGis! port=5432"
-        CONNECTIONTYPE POSTGIS
-        GROUP 'default'
-        STATUS ON
-        PROJECTION
-            'init=epsg:4326'
-        END
-        PROCESSING 'LABEL_NO_CLIP=ON'
-        PROCESSING 'CLOSE_CONNECTION=DEFER'
-        METADATA
-            "wms_include_items" "all"
-        END
-        TEMPLATE 'blank.html'
-        DATA "geom from peuplement_global_mauricie using unique fid using srid=4326"
-        CLASSITEM 'dsu_code'
-        CLASS
-            EXPRESSION ('[dsu_code]' ='1A'OR'[dsu_code]' ='1')
-            STYLE
-                COLOR '#FFFF00'
-            END
-        END
-    END
 
 #---- LEVEL 14 ----#
     LAYER
@@ -4805,38 +4773,6 @@ MAP
             STYLE
                 COLOR '#469FC3'
                 WIDTH 1.5
-            END
-        END
-    END
-    LAYER
-        MAXSCALEDENOM 65536
-        MINSCALEDENOM 32768
-        NAME 'peuplement_global_mauricie14'
-        TYPE POLYGON
-        METADATA
-            "wms_title" "peuplement_global_mauricie"
-            "wms_name"   "peuplement_global_mauricie"
-            "wms_include_items" "all"
-        END
-        CONNECTION "host=localhost dbname=remabec user=synergis password=Syn3rGis! port=5432"
-        CONNECTIONTYPE POSTGIS
-        GROUP 'default'
-        STATUS ON
-        PROJECTION
-            'init=epsg:4326'
-        END
-        PROCESSING 'LABEL_NO_CLIP=ON'
-        PROCESSING 'CLOSE_CONNECTION=DEFER'
-        METADATA
-            "wms_include_items" "all"
-        END
-        TEMPLATE 'blank.html'
-        DATA "geom from peuplement_global_mauricie using unique fid using srid=4326"
-        CLASSITEM 'dsu_code'
-        CLASS
-            EXPRESSION ('[dsu_code]' ='1A'OR'[dsu_code]' ='1')
-            STYLE
-                COLOR '#FFFF00'
             END
         END
     END
@@ -5315,38 +5251,6 @@ MAP
             END
         END
     END
-    LAYER
-        MAXSCALEDENOM 32768
-        MINSCALEDENOM 16384
-        NAME 'peuplement_global_mauricie15'
-        TYPE POLYGON
-        METADATA
-            "wms_title" "peuplement_global_mauricie"
-            "wms_name"   "peuplement_global_mauricie"
-            "wms_include_items" "all"
-        END
-        CONNECTION "host=localhost dbname=remabec user=synergis password=Syn3rGis! port=5432"
-        CONNECTIONTYPE POSTGIS
-        GROUP 'default'
-        STATUS ON
-        PROJECTION
-            'init=epsg:4326'
-        END
-        PROCESSING 'LABEL_NO_CLIP=ON'
-        PROCESSING 'CLOSE_CONNECTION=DEFER'
-        METADATA
-            "wms_include_items" "all"
-        END
-        TEMPLATE 'blank.html'
-        DATA "geom from peuplement_global_mauricie using unique fid using srid=4326"
-        CLASSITEM 'dsu_code'
-        CLASS
-            EXPRESSION ('[dsu_code]' ='1A'OR'[dsu_code]' ='1')
-            STYLE
-                COLOR '#FFFF00'
-            END
-        END
-    END
 
 #---- LEVEL 16 ----#
     LAYER
@@ -5819,38 +5723,6 @@ MAP
             STYLE
                 COLOR '#469FC3'
                 WIDTH 1.5
-            END
-        END
-    END
-    LAYER
-        MAXSCALEDENOM 16384
-        MINSCALEDENOM 8192
-        NAME 'peuplement_global_mauricie16'
-        TYPE POLYGON
-        METADATA
-            "wms_title" "peuplement_global_mauricie"
-            "wms_name"   "peuplement_global_mauricie"
-            "wms_include_items" "all"
-        END
-        CONNECTION "host=localhost dbname=remabec user=synergis password=Syn3rGis! port=5432"
-        CONNECTIONTYPE POSTGIS
-        GROUP 'default'
-        STATUS ON
-        PROJECTION
-            'init=epsg:4326'
-        END
-        PROCESSING 'LABEL_NO_CLIP=ON'
-        PROCESSING 'CLOSE_CONNECTION=DEFER'
-        METADATA
-            "wms_include_items" "all"
-        END
-        TEMPLATE 'blank.html'
-        DATA "geom from peuplement_global_mauricie using unique fid using srid=4326"
-        CLASSITEM 'dsu_code'
-        CLASS
-            EXPRESSION ('[dsu_code]' ='1A'OR'[dsu_code]' ='1')
-            STYLE
-                COLOR '#FFFF00'
             END
         END
     END

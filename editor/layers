@@ -615,7 +615,7 @@ LAYER {
 }*/
 
 
-LAYER {
+/*LAYER {
         13-16 {
         NAME: 'peuplement_global_mauricie'
         TYPE: POLYGON    
@@ -628,14 +628,92 @@ LAYER {
         @layerconfig
         DATA: "geom from peuplement_global_mauricie using unique fid using srid=4326" 
         CLASSITEM: 'dsu_code'
-        CLASS {
+         CLASS {
             EXPRESSION:('[dsu_code]' ='1A'OR'[dsu_code]' ='1')
             STYLE {
                  COLOR: '#FFFF00'              
             }
-        }
+         }
+         CLASS {
+            EXPRESSION:('[dsu_code]' ='1AR'OR'[dsu_code]' ='R1A')
+            STYLE {
+                 COLOR: '#CB87AF'              
+            }
+         }
+         CLASS {
+            EXPRESSION:('[dsu_code]' ='2A'OR'[dsu_code]' ='5A'OR'[dsu_code]' ='5S'OR'[dsu_code]' ='5SY'OR'[dsu_code]' ='6S'OR'[dsu_code]' ='9S')
+            STYLE {
+                 COLOR: '#55AA55'             
+            }
+         }
+         CLASS {
+            EXPRESSION:('[dsu_code]' ='2B'OR'[dsu_code]' ='2BE'OR'[dsu_code]' ='2BD'OR'[dsu_code]' ='2BEY'OR'[dsu_code]' ='2BER'OR'[dsu_code]' ='2BR')
+            STYLE {
+                 COLOR: '#124E12'             
+            }
+         }
+         CLASS {
+            EXPRESSION:('[dsu_code]' ='2'OR'[dsu_code]' ='3AC'OR'[dsu_code]' ='3AE'OR'[dsu_code]' ='3AN'OR'[dsu_code]' ='3DA'OR'[dsu_code]' ='4A'OR'[dsu_code]' ='4AY'OR'[dsu_code]' ='4GA'OR'[dsu_code]' ='4GS'OR'[dsu_code]' ='4GSY'OR'[dsu_code]' ='4T')
+            STYLE {
+                 COLOR: '#F3B5D6'             
+            }
+         }
+         CLASS {
+            EXPRESSION:('[dsu_code]' ='7'OR'[dsu_code]' ='7E'OR'[dsu_code]' ='7T'OR'[dsu_code]' ='7TM'OR'[dsu_code]' ='7TY'OR'[dsu_code]' ='R7T')
+            STYLE {
+                 COLOR: '#E2FABA'             
+            }
+         }
+         CLASS {
+            EXPRESSION:('[dsu_code]' ='R'OR'[dsu_code]' ='R4'OR'[dsu_code]' ='8E'OR'[dsu_code]' ='8C'OR'[dsu_code]' ='8E')
+            STYLE {
+                 COLOR: '#7E4A2B'             
+            }
+         }
+         CLASS {
+            EXPRESSION:('[dsu_code]' ='2AE'OR'[dsu_code]' ='2AK'OR'[dsu_code]' ='2AT'OR'[dsu_code]' ='2AY'OR'[dsu_code]' ='2BY'OR'[dsu_code]' ='2BP')
+            STYLE {
+                 COLOR: '#6081D9'             
+            }
+         }
+         CLASS {
+            EXPRESSION:('[dsu_code]' ='1AY'OR'[dsu_code]' ='1Y')
+            STYLE {
+                 COLOR: '#FF8100'             
+            }
+         }
+         CLASS {
+            EXPRESSION:('[dsu_code]' ='1B'OR'[dsu_code]' ='1BF'OR'[dsu_code]' ='1BP'OR'[dsu_code]' ='1BPY'OR'[dsu_code]' ='1BT'OR'[dsu_code]' ='1P')
+            STYLE {
+                 COLOR: '#E7E729'
+            }  
+             STYLE {    
+                 SYMBOL: 'hatchsymbol'  
+                 COLOR: '#FF2301'
+                 SIZE: 10
+                 ANGLE: -45  
+            }
+         }
+         CLASS {
+            EXPRESSION:('[dsu_code]' ='1M'OR'[dsu_code]' ='1AM'OR'[dsu_code]' ='M1A')
+            STYLE {
+                 COLOR: '#FFB336'
+            }  
+             STYLE {    
+                 SYMBOL: 'hatchsymbol'  
+                 COLOR: '#FF2301'
+                 SIZE: 10
+                 ANGLE: 45  
+            }
+         }
+         CLASS {
+            EXPRESSION:('[dsu_code]' ='1BD')
+            STYLE {
+                 COLOR: '#800BC1'              
+            }
+         }
     }
-}
+}*/
 LAYER {
         7-12 {
         NAME: 'uaf_region_04'
@@ -679,4 +757,38 @@ LAYER {
     }
 }
 
+
+/*LAYER {
+        13-16 {
+        NAME: 'peuplement_global_mauricie'
+        TYPE: POLYGON    
+        METADATA {{
+              "wms_title" "peuplement_global_mauricie"
+              "wms_name"   "peuplement_global_mauricie"
+              "wms_include_items" "all"
+        }}
+        @connection
+        @layerconfig
+        DATA: "geom from peuplement_global_mauricie using unique fid using srid=4326" 
+        CLASSITEM: 'tco_code'
+         CLASS {
+            EXPRESSION:('[tco_code]' ='R')
+            STYLE {
+                 COLOR: '#136D00'              
+            }
+         }
+         CLASS {
+            EXPRESSION:('[tco_code]' ='F')
+            STYLE {
+                 COLOR: '#FBCBE6'              
+            }
+         }
+         CLASS {
+            EXPRESSION:('[tco_code]' ='M')
+            STYLE {
+                 COLOR: '#FFFF1E'              
+            }
+         }
+     }
+}*/
 }
