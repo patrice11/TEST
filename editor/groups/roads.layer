@@ -1,5 +1,5 @@
 LAYER {
-    6-16 {
+    6-8 {
         NAME: 'roads'
         TYPE: LINE
         @layerconfig

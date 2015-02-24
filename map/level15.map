@@ -176,55 +176,6 @@
     LAYER
         MAXSCALEDENOM 32768
         MINSCALEDENOM 16384
-        NAME 'roads15'
-        TYPE LINE
-        GROUP 'default'
-        STATUS ON
-        PROJECTION
-            'init=epsg:4326'
-        END
-        PROCESSING 'LABEL_NO_CLIP=ON'
-        PROCESSING 'CLOSE_CONNECTION=DEFER'
-        METADATA
-            "wms_include_items" "all"
-        END
-        TEMPLATE 'blank.html'
-        DATA '10m_cultural/ne_10m_roads'
-        CLASSITEM 'type'
-        LABELITEM 'name'
-        CLASS
-            EXPRESSION 'Major Highway'
-            STYLE
-                COLOR '#00EB00'
-            END
-            LABEL
-                COLOR 255 255 255
-                OUTLINECOLOR '#00EB00'
-                OUTLINEWIDTH 2
-                FONT 'scb'
-                TYPE truetype
-                SIZE 7
-                REPEATDISTANCE 100
-                MINDISTANCE 300
-                POSITION AUTO
-                PARTIALS FALSE
-            END
-        END
-        CLASS
-            EXPRESSION 'Secondary Highway'
-            STYLE
-                COLOR '#FF0000'
-            END
-        END
-        CLASS
-            STYLE
-                COLOR '#FF0000'
-            END
-        END
-    END
-    LAYER
-        MAXSCALEDENOM 32768
-        MINSCALEDENOM 16384
         NAME 'populated_places15'
         TYPE POINT
         GROUP 'default'
@@ -293,7 +244,7 @@
         DATA "geom from aire_protege using unique fid using srid=4326"
         CLASS
             STYLE
-                COLOR 85 255 255
+                COLOR '#44DD2C'
             END
         END
     END
@@ -331,6 +282,241 @@
         CLASS
             STYLE
                 COLOR '#9F9F9F'
+            END
+        END
+    END
+    LAYER
+        MAXSCALEDENOM 32768
+        MINSCALEDENOM 16384
+        NAME 'plan_depart151615'
+        TYPE POLYGON
+        METADATA
+            "wms_title" "plan_depart1516"
+            "wms_name"   "plan_depart1516"
+            "wms_include_items" "all"
+        END
+        CONNECTION "host=localhost dbname=remabec user=synergis password=Syn3rGis! port=5432"
+        CONNECTIONTYPE POSTGIS
+        GROUP 'default'
+        STATUS ON
+        PROJECTION
+            'init=epsg:4326'
+        END
+        PROCESSING 'LABEL_NO_CLIP=ON'
+        PROCESSING 'CLOSE_CONNECTION=DEFER'
+        METADATA
+            "wms_include_items" "all"
+        END
+        TEMPLATE 'blank.html'
+        DATA "geom from plan_depart1516 using unique fid using srid=4326"
+        CLASSITEM 'trait_auto'
+        CLASS
+            EXPRESSION 'RPLB_500 OUI'
+            STYLE
+                COLOR '#E7008C'
+                OUTLINECOLOR '#E7008C'
+                WIDTH 0.2
+            END
+        END
+        CLASS
+            EXPRESSION 'CPICP-PG OUI'
+            STYLE
+                COLOR '#830AC6'
+                OUTLINECOLOR '#E7008C'
+                WIDTH 0.2
+            END
+        END
+        CLASS
+            EXPRESSION 'CPRS_U-BOUQ OUI'
+            STYLE
+                COLOR '#F693A0'
+                OUTLINECOLOR '#E7008C'
+                WIDTH 0.2
+            END
+        END
+        CLASS
+            EXPRESSION 'CPRS_U OUI'
+            STYLE
+                COLOR '#FFFCA7'
+                OUTLINECOLOR '#E7008C'
+                WIDTH 0.2
+            END
+        END
+        CLASS
+            EXPRESSION 'CPR_BA-ENS OUI'
+            STYLE
+                COLOR '#CDD54A'
+                OUTLINECOLOR '#E7008C'
+                WIDTH 0.2
+            END
+        END
+        CLASS
+            EXPRESSION 'CPIRL_BA-ENS OUI'
+            STYLE
+                COLOR 88 221 150
+                OUTLINECOLOR '#E7008C'
+                WIDTH 0.2
+            END
+        END
+        CLASS
+            EXPRESSION 'CPIRL_U-MUL OUI'
+            STYLE
+                COLOR '#80C4D0'
+                OUTLINECOLOR '#E7008C'
+                WIDTH 0.2
+            END
+        END
+        CLASS
+            EXPRESSION 'EJ OUI'
+            STYLE
+                COLOR '#CFAECA'
+                OUTLINECOLOR '#E7008C'
+                WIDTH 0.2
+            END
+        END
+        CLASS
+            EXPRESSION 'CPPTM_DIS OUI'
+            STYLE
+                COLOR '#FFF56C'
+                OUTLINECOLOR '#E7008C'
+                WIDTH 0.2
+            END
+        END
+        CLASS
+            EXPRESSION 'CPIRL_BA-ENS NON'
+            STYLE
+                COLOR 88 221 150
+                OUTLINECOLOR '#E7008C'
+                WIDTH 0.2
+            END
+            STYLE
+                SYMBOL 'hatchsymbol'
+                COLOR '#FF2301'
+                SIZE 10
+                ANGLE 45
+            END
+        END
+        CLASS
+            EXPRESSION 'CPIRL_U-MUL NON'
+            STYLE
+                COLOR '#80C4D0'
+                OUTLINECOLOR '#E7008C'
+                WIDTH 0.2
+            END
+            STYLE
+                SYMBOL 'hatchsymbol'
+                COLOR '#FF2301'
+                SIZE 10
+                ANGLE 45
+            END
+        END
+        CLASS
+            EXPRESSION 'CPR_BA-ENS NON'
+            STYLE
+                COLOR '#CDD54A'
+                OUTLINECOLOR '#E7008C'
+                WIDTH 0.2
+            END
+            STYLE
+                SYMBOL 'hatchsymbol'
+                COLOR '#FF2301'
+                SIZE 10
+                ANGLE 45
+            END
+        END
+        CLASS
+            EXPRESSION 'CPRS_U NON'
+            STYLE
+                COLOR '#FFFCA7'
+                OUTLINECOLOR '#E7008C'
+                WIDTH 0.2
+            END
+            STYLE
+                SYMBOL 'hatchsymbol'
+                COLOR '#FF2301'
+                SIZE 10
+                ANGLE 45
+            END
+        END
+        CLASS
+            EXPRESSION 'CPRS_U-BOUQ NON'
+            STYLE
+                COLOR '#F693A0'
+                OUTLINECOLOR '#E7008C'
+                WIDTH 0.2
+            END
+            STYLE
+                SYMBOL 'hatchsymbol'
+                COLOR '#FF2301'
+                SIZE 10
+                ANGLE 45
+            END
+        END
+        CLASS
+            EXPRESSION 'RPLB_500 NON'
+            STYLE
+                COLOR '#E7008C'
+                OUTLINECOLOR '#E7008C'
+                WIDTH 0.2
+            END
+            STYLE
+                SYMBOL 'hatchsymbol'
+                COLOR '#2025E2'
+                SIZE 10
+                ANGLE 90
+            END
+            STYLE
+                SYMBOL 'hatchsymbol'
+                COLOR '#2025E2'
+                SIZE 10
+                ANGLE 0
+            END
+        END
+        CLASS
+            EXPRESSION 'CPICP-PG NON'
+            STYLE
+                COLOR '#830AC6'
+                OUTLINECOLOR '#E7008C'
+                WIDTH 0.2
+            END
+            STYLE
+                SYMBOL 'hatchsymbol'
+                COLOR '#FF2301'
+                SIZE 10
+                ANGLE 45
+            END
+        END
+        CLASS
+            EXPRESSION 'EJ NON'
+            STYLE
+                COLOR '#CFAECA'
+                OUTLINECOLOR '#E7008C'
+                WIDTH 0.2
+            END
+            STYLE
+                SYMBOL 'hatchsymbol'
+                COLOR '#FF2301'
+                SIZE 10
+                ANGLE 45
+            END
+        END
+        CLASS
+            EXPRESSION 'CPPTM_DIS NON'
+            STYLE
+                COLOR '#FFE56C'
+                OUTLINECOLOR '#E7008C'
+                WIDTH 0.2
+            END
+            STYLE
+                SYMBOL 'hatchsymbol'
+                COLOR '#FF2301'
+                SIZE 10
+                ANGLE 45
+            END
+        END
+        CLASS
+            STYLE
+                COLOR '#31E047'
             END
         END
     END
@@ -429,7 +615,7 @@
             LABEL
                 COLOR '#80C0FF'
                 OUTLINECOLOR 255 255 255
-                FONT 'scb'
+                FONT 'arb'
                 TYPE truetype
                 SIZE 8
                 REPEATDISTANCE 100
@@ -468,6 +654,365 @@
             STYLE
                 COLOR '#469FC3'
                 WIDTH 1.5
+            END
+        END
+    END
+    LAYER
+        MAXSCALEDENOM 32768
+        MINSCALEDENOM 16384
+        NAME 'lte_zec_pourvoirie15'
+        METADATA
+            "wms_title" "lte_zec_pourvoirie"
+            "wms_name"   "lte_zec_pourvoirie"
+            "wms_include_items" "all"
+        END
+        CONNECTION "host=localhost dbname=remabec user=synergis password=Syn3rGis! port=5432"
+        CONNECTIONTYPE POSTGIS
+        GROUP 'default'
+        STATUS ON
+        PROJECTION
+            'init=epsg:4326'
+        END
+        PROCESSING 'LABEL_NO_CLIP=ON'
+        PROCESSING 'CLOSE_CONNECTION=DEFER'
+        METADATA
+            "wms_include_items" "all"
+        END
+        TEMPLATE 'blank.html'
+        TYPE POLYGON
+        DATA "geom from lte_zec_pourvoirie using unique fid using srid=4326"
+        LABELITEM 'nom'
+        CLASS
+            STYLE
+                OUTLINECOLOR '#286C12'
+                WIDTH 1
+            END
+            LABEL
+                COLOR '#286C12'
+                OUTLINECOLOR 255 255 255
+                FONT 'scb'
+                TYPE truetype
+                SIZE 8
+                REPEATDISTANCE 100
+                MINDISTANCE 300
+                ANGLE FOLLOW
+                POSITION AUTO
+                PARTIALS FALSE
+            END
+        END
+    END
+    LAYER
+        MAXSCALEDENOM 32768
+        MINSCALEDENOM 16384
+        NAME 'plch_depart151615'
+        TYPE LINE
+        METADATA
+            "wms_title" "plch_depart1516"
+            "wms_name"   "plch_depart1516"
+            "wms_include_items" "all"
+        END
+        CONNECTION "host=localhost dbname=remabec user=synergis password=Syn3rGis! port=5432"
+        CONNECTIONTYPE POSTGIS
+        GROUP 'default'
+        STATUS ON
+        PROJECTION
+            'init=epsg:4326'
+        END
+        PROCESSING 'LABEL_NO_CLIP=ON'
+        PROCESSING 'CLOSE_CONNECTION=DEFER'
+        METADATA
+            "wms_include_items" "all"
+        END
+        TEMPLATE 'blank.html'
+        DATA "geom from plch_depart1516 using unique fid using srid=4326"
+        CLASSITEM 'autorise'
+        CLASS
+            EXPRESSION 'OUI'
+            STYLE
+                COLOR '#180A0D'
+                WIDTH 1.5
+            END
+        END
+        CLASS
+            EXPRESSION 'NON'
+            STYLE
+                COLOR '#180A0D'
+                WIDTH 2
+                PATTERN
+                    1 4
+                END
+            END
+        END
+    END
+    LAYER
+        MAXSCALEDENOM 32768
+        MINSCALEDENOM 16384
+        NAME 'corridor_routier15'
+        TYPE POLYGON
+        METADATA
+            "wms_title" "corridor_routier"
+            "wms_name"   "corridor_routier"
+            "wms_include_items" "all"
+        END
+        CONNECTION "host=localhost dbname=remabec user=synergis password=Syn3rGis! port=5432"
+        CONNECTIONTYPE POSTGIS
+        GROUP 'default'
+        STATUS ON
+        PROJECTION
+            'init=epsg:4326'
+        END
+        PROCESSING 'LABEL_NO_CLIP=ON'
+        PROCESSING 'CLOSE_CONNECTION=DEFER'
+        METADATA
+            "wms_include_items" "all"
+        END
+        TEMPLATE 'blank.html'
+        DATA "geom from corridor_routier using unique fid using srid=4326"
+        CLASS
+            STYLE
+                OUTLINECOLOR '#FE1218'
+                WIDTH 1.5
+            END
+            STYLE
+                SYMBOL 'hatchsymbol'
+                COLOR '#FE1218'
+                SIZE 10
+                ANGLE 45
+            END
+        END
+    END
+    LAYER
+        MAXSCALEDENOM 32768
+        MINSCALEDENOM 16384
+        NAME 'chemin15'
+        METADATA
+            "wms_title" "chemin"
+            "wms_name"   "chemin"
+            "wms_include_items" "all"
+        END
+        CONNECTION "host=localhost dbname=remabec user=synergis password=Syn3rGis! port=5432"
+        CONNECTIONTYPE POSTGIS
+        GROUP 'default'
+        STATUS ON
+        PROJECTION
+            'init=epsg:4326'
+        END
+        PROCESSING 'LABEL_NO_CLIP=ON'
+        PROCESSING 'CLOSE_CONNECTION=DEFER'
+        METADATA
+            "wms_include_items" "all"
+        END
+        TEMPLATE 'blank.html'
+        TYPE LINE
+        DATA "geom from chemin using unique fid using srid=4326"
+        LABELITEM 'nom'
+        CLASS
+            EXPRESSION ('[priorite]' = '1' or'[priorite]' = '3' )
+            STYLE
+                COLOR 0 0 0
+                WIDTH 1
+            END
+            LABEL
+                COLOR 0 0 0
+                OUTLINECOLOR 255 255 255
+                FONT 'scb'
+                TYPE truetype
+                SIZE 8
+                REPEATDISTANCE 100
+                MINDISTANCE 300
+                ANGLE FOLLOW
+                POSITION AUTO
+                PARTIALS FALSE
+            END
+        END
+        CLASS
+            EXPRESSION ('[priorite]' = '4' or'[priorite]' = '5' or'[priorite]' = '22'or'[priorite]' = '33')
+            STYLE
+                COLOR 0 0 0
+                WIDTH 0.8
+            END
+            LABEL
+                COLOR 0 0 0
+                OUTLINECOLOR 255 255 255
+                FONT 'scb'
+                TYPE truetype
+                SIZE 8
+                REPEATDISTANCE 100
+                MINDISTANCE 300
+                ANGLE FOLLOW
+                POSITION AUTO
+                PARTIALS FALSE
+            END
+        END
+    END
+    LAYER
+        MAXSCALEDENOM 32768
+        MINSCALEDENOM 16384
+        NAME 'affectation15'
+        TYPE POINT
+        METADATA
+            "wms_title" "affectation"
+            "wms_name"   "affectation"
+            "wms_include_items" "all"
+        END
+        CONNECTION "host=localhost dbname=remabec user=synergis password=Syn3rGis! port=5432"
+        CONNECTIONTYPE POSTGIS
+        GROUP 'default'
+        STATUS ON
+        PROJECTION
+            'init=epsg:4326'
+        END
+        PROCESSING 'LABEL_NO_CLIP=ON'
+        PROCESSING 'CLOSE_CONNECTION=DEFER'
+        METADATA
+            "wms_include_items" "all"
+        END
+        TEMPLATE 'blank.html'
+        DATA "geom from affectation using unique fid using srid=4326"
+        CLASSITEM 'aff_appell'
+        CLASS
+            EXPRESSION ('[aff_appell]' = 'Camping rustique')
+            STYLE
+                SYMBOL 'circle'
+                COLOR 255 255 255
+                OUTLINECOLOR 0 0 0
+                OUTLINEWIDTH 1
+                SIZE 15
+            END
+            STYLE
+                SYMBOL 'camping'
+                SIZE 10
+            END
+        END
+        CLASS
+            EXPRESSION ('[aff_appell]' = 'Abri sommaire'or'[aff_appell]' = 'Abri temporaire de trappeur autochtone' )
+            STYLE
+                SYMBOL 'square'
+                COLOR 255 255 255
+                SIZE 10
+            END
+            STYLE
+                SYMBOL 'abri'
+                SIZE 11
+            END
+        END
+        CLASS
+            EXPRESSION ('[aff_appell]' = 'Aire de pique-nique non RNI')
+            STYLE
+                SYMBOL 'square'
+                COLOR 255 255 255
+                SIZE 20
+            END
+            STYLE
+                SYMBOL 'Pique-nique RNI'
+                SIZE 19
+            END
+        END
+        CLASS
+            EXPRESSION ('[aff_appell]' = 'Terrain sous bail')
+            STYLE
+                SYMBOL 'square'
+                COLOR '#BCEAA6'
+                SIZE 12
+                OUTLINECOLOR 0 0 0
+                WIDTH 1.5
+            END
+        END
+        CLASS
+            EXPRESSION ('[aff_appell]' = 'Camp de trappeur non autochtone')
+            STYLE
+                SYMBOL 'camp2'
+                COLOR '#BCEAA6'
+                SIZE 12
+                OUTLINECOLOR 0 0 0
+                WIDTH 1.5
+            END
+        END
+        CLASS
+            EXPRESSION ('[aff_appell]' = 'Camp forestier')
+            STYLE
+                SYMBOL 'square'
+                COLOR 255 255 255
+                SIZE 18
+            END
+            STYLE
+                SYMBOL 'camp_forestier'
+                COLOR 0 0 0
+                SIZE 18
+            END
+        END
+        CLASS
+            EXPRESSION ('[aff_appell]' = 'Camp de pourvoirie')
+            STYLE
+                SYMBOL 'circle'
+                COLOR 255 255 255
+                SIZE 25
+            END
+            STYLE
+                SYMBOL 'pourvoirie'
+                COLOR 0 0 0
+                SIZE 25
+            END
+        END
+        CLASS
+            EXPRESSION ('[aff_appell]' = 'Site de vill%')
+            STYLE
+                SYMBOL 'site'
+                COLOR 0 0 0
+                SIZE 25
+            END
+        END
+        CLASS
+            STYLE
+                SYMBOL 'circle'
+                COLOR 255 255 255
+                SIZE 15
+            END
+            STYLE
+                SYMBOL 'pepiniere'
+                COLOR 0 0 0
+                SIZE 25
+            END
+        END
+    END
+    LAYER
+        MAXSCALEDENOM 32768
+        MINSCALEDENOM 16384
+        NAME 'cutover_autre15'
+        METADATA
+            "wms_title" "cutover_autre"
+            "wms_name"   "cutover_autre"
+            "wms_include_items" "all"
+        END
+        CONNECTION "host=localhost dbname=remabec user=synergis password=Syn3rGis! port=5432"
+        CONNECTIONTYPE POSTGIS
+        GROUP 'default'
+        STATUS ON
+        PROJECTION
+            'init=epsg:4326'
+        END
+        PROCESSING 'LABEL_NO_CLIP=ON'
+        PROCESSING 'CLOSE_CONNECTION=DEFER'
+        METADATA
+            "wms_include_items" "all"
+        END
+        TEMPLATE 'blank.html'
+        TYPE POLYGON
+        DATA "geom from cutover_autre using unique fid using srid=4326"
+        CLASSITEM 'traitement'
+        CLASS
+            EXPRESSION ('[traitement]' = 'CPRS_U' or '[traitement]' = 'CPRS_U-BOUQ' or '[traitement]' = 'CPPTM_DIS' or '[traitement]' = 'RML')
+            STYLE
+                SYMBOL 'hatchsymbol'
+                COLOR '#2BBC2B'
+                SIZE 10
+                ANGLE 45
+            END
+            STYLE
+                SYMBOL 'hatchsymbol'
+                COLOR '#2BBC2B'
+                SIZE 10
+                ANGLE 135
             END
         END
     END

@@ -1,0 +1,19 @@
+LAYER {
+        8-16 {
+        NAME: 'plch_depart1516'
+        TYPE: LINE    
+        METADATA {{
+              "wms_title" "plch_depart1516"
+              "wms_name"   "plch_depart1516"
+              "wms_include_items" "all"
+        }}
+        @connection
+        @layerconfig
+        DATA: "geom from plch_depart1516 using unique fid using srid=4326" 
+            CLASS{
+                STYLE{
+                  COLOR: '#FFFF00'
+             }      
+        }
+    }
+}

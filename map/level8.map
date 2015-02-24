@@ -47,30 +47,6 @@
     LAYER
         MAXSCALEDENOM 4194304
         MINSCALEDENOM 2097152
-        NAME 'lakes8'
-        TYPE POLYGON
-        GROUP 'default'
-        STATUS ON
-        PROJECTION
-            'init=epsg:4326'
-        END
-        PROCESSING 'LABEL_NO_CLIP=ON'
-        PROCESSING 'CLOSE_CONNECTION=DEFER'
-        METADATA
-            "wms_include_items" "all"
-        END
-        TEMPLATE 'blank.html'
-        DATA '50m_physical/ne_50m_lakes'
-        CLASS
-            STYLE
-                COLOR '#C6E2F2'
-                OUTLINECOLOR '#469FC3'
-            END
-        END
-    END
-    LAYER
-        MAXSCALEDENOM 4194304
-        MINSCALEDENOM 2097152
         NAME 'rivers8'
         TYPE LINE
         GROUP 'default'
@@ -179,6 +155,30 @@
                 ANGLE FOLLOW
                 POSITION AUTO
                 PARTIALS FALSE
+            END
+        END
+    END
+    LAYER
+        MAXSCALEDENOM 4194304
+        MINSCALEDENOM 2097152
+        NAME 'lakes8'
+        TYPE POLYGON
+        GROUP 'default'
+        STATUS ON
+        PROJECTION
+            'init=epsg:4326'
+        END
+        PROCESSING 'LABEL_NO_CLIP=ON'
+        PROCESSING 'CLOSE_CONNECTION=DEFER'
+        METADATA
+            "wms_include_items" "all"
+        END
+        TEMPLATE 'blank.html'
+        DATA '50m_physical/ne_50m_lakes'
+        CLASS
+            STYLE
+                COLOR '#C6E2F2'
+                OUTLINECOLOR '#469FC3'
             END
         END
     END
@@ -435,6 +435,38 @@
     LAYER
         MAXSCALEDENOM 4194304
         MINSCALEDENOM 2097152
+        NAME 'lac_mauricie8'
+        METADATA
+            "wms_title" "lac_mauricie"
+            "wms_name"   "lac_mauricie"
+            "wms_include_items" "all"
+        END
+        CONNECTION "host=localhost dbname=remabec user=synergis password=Syn3rGis! port=5432"
+        CONNECTIONTYPE POSTGIS
+        GROUP 'default'
+        STATUS ON
+        PROJECTION
+            'init=epsg:4326'
+        END
+        PROCESSING 'LABEL_NO_CLIP=ON'
+        PROCESSING 'CLOSE_CONNECTION=DEFER'
+        METADATA
+            "wms_include_items" "all"
+        END
+        TEMPLATE 'blank.html'
+        TYPE POLYGON
+        DATA "geom from (select * from lac_mauricie where AREA>='200.000000001' AND ter_co='EAU')as foo using unique fid using srid=4326"
+        LABELITEM 'toponyme'
+        CLASS
+            STYLE
+                COLOR '#C6E2F2'
+                OUTLINECOLOR '#469FC3'
+            END
+        END
+    END
+    LAYER
+        MAXSCALEDENOM 4194304
+        MINSCALEDENOM 2097152
         NAME 'uaf_region_048'
         METADATA
             "wms_title" "uaf_region_04"
@@ -456,12 +488,89 @@
         TEMPLATE 'blank.html'
         TYPE POLYGON
         DATA "geom from uaf_region_04 using unique fid using srid=4326"
+        CLASSITEM 'no_uaf'
         CLASS
+            EXPRESSION '041-51'
             STYLE
                 COLOR '#C2F1C2'
-                OUTLINECOLOR '#55AA55'
-                WIDTH 1
-                OPACITY 50
+                OPACITY 30
+            END
+        END
+        CLASS
+            EXPRESSION '042-51'
+            STYLE
+                COLOR '#C7C050'
+                OPACITY 30
+            END
+        END
+        CLASS
+            EXPRESSION '043-51'
+            STYLE
+                COLOR '#FF9F37'
+                OPACITY 30
+            END
+        END
+        CLASS
+            EXPRESSION '043-52'
+            STYLE
+                COLOR '#83A0D0'
+                OPACITY 30
+            END
+        END
+    END
+    LAYER
+        MAXSCALEDENOM 4194304
+        MINSCALEDENOM 2097152
+        NAME 'pts_chantier8'
+        METADATA
+            "wms_title" "pts_chantier"
+            "wms_name"   "pts_chantier"
+            "wms_include_items" "all"
+        END
+        CONNECTION "host=localhost dbname=remabec user=synergis password=Syn3rGis! port=5432"
+        CONNECTIONTYPE POSTGIS
+        GROUP 'default'
+        STATUS ON
+        PROJECTION
+            'init=epsg:4326'
+        END
+        PROCESSING 'LABEL_NO_CLIP=ON'
+        PROCESSING 'CLOSE_CONNECTION=DEFER'
+        METADATA
+            "wms_include_items" "all"
+        END
+        TEMPLATE 'blank.html'
+        TYPE POINT
+        DATA "geom from pts_chantier using unique fid using srid=4326"
+        LABELITEM 'secteur'
+        CLASS
+            STYLE
+                SYMBOL 'circle'
+                COLOR '#FE1218'
+                OUTLINECOLOR 255 255 255
+                SIZE 10
+            END
+            STYLE
+                SYMBOL 'circle'
+                COLOR 255 255 255
+                SIZE 5
+            END
+            STYLE
+                SYMBOL 'circle'
+                COLOR '#FE1218'
+                SIZE 2
+            END
+            LABEL
+                COLOR '#FE1218'
+                OUTLINECOLOR 255 255 255
+                FONT 'scb'
+                TYPE truetype
+                SIZE 10
+                REPEATDISTANCE 100
+                MINDISTANCE 300
+                ANGLE FOLLOW
+                POSITION AUTO
+                PARTIALS FALSE
             END
         END
     END

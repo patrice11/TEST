@@ -15,28 +15,8 @@ LAYER {
         }
     }
 }
-
 LAYER {
-    3-10 {
-        NAME: 'lakes'
-        TYPE: POLYGON
-        @layerconfig
-        DATA {
-            1-4: '110m_physical/ne_110m_lakes'
-            5-10: '50m_physical/ne_50m_lakes'
-            11-16: '10m_physical/ne_10m_lakes'		
-		}
-        CLASS {
-            STYLE {
-                COLOR: @watercolor
-                OUTLINECOLOR: @watercolor_ol
-            }
-        }
-    }
-}
-
-LAYER {
-    5-10 {
+    5-8 {
         NAME: 'rivers'
         TYPE: LINE
         @layerconfig
@@ -167,7 +147,24 @@ LAYER {
         }
     }
 }
-
+LAYER {
+    3-8 {
+        NAME: 'lakes'
+        TYPE: POLYGON
+        @layerconfig
+        DATA {
+            1-4: '110m_physical/ne_110m_lakes'
+            5-10: '50m_physical/ne_50m_lakes'
+            11-16: '10m_physical/ne_10m_lakes'		
+		}
+        CLASS {
+            STYLE {
+                COLOR: @watercolor
+                OUTLINECOLOR: @watercolor_ol
+            }
+        }
+    }
+}
 
 
 

@@ -1,2 +1,12 @@
 sc fonts/DejaVuSansCondensed.ttf
 scb fonts/DejaVuSansCondensed-Bold.ttf
+pac fonts/Pacifico.ttf
+ari fonts/arial.ttf
+arb fonts/arialbi.ttf
+esr symbol/ESRIEnvironmentalIcons.ttf
+30s fonts/ESRI_30S.TTF
+ECN fonts/ESRI_cartography_normal.TTF
+EF1 fonts/ESRI_us_forestry1.TTF
+EBN fonts/ESRI_business_normal.TTF
+EEHS fonts/ESRI_enviro_hazard_sites.TTF
+EEI fonts/ESRIENVIRONMENTALICONS.TTF

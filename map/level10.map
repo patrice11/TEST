@@ -47,144 +47,6 @@
     LAYER
         MAXSCALEDENOM 1048576
         MINSCALEDENOM 524288
-        NAME 'lakes10'
-        TYPE POLYGON
-        GROUP 'default'
-        STATUS ON
-        PROJECTION
-            'init=epsg:4326'
-        END
-        PROCESSING 'LABEL_NO_CLIP=ON'
-        PROCESSING 'CLOSE_CONNECTION=DEFER'
-        METADATA
-            "wms_include_items" "all"
-        END
-        TEMPLATE 'blank.html'
-        DATA '50m_physical/ne_50m_lakes'
-        CLASS
-            STYLE
-                COLOR '#C6E2F2'
-                OUTLINECOLOR '#469FC3'
-            END
-        END
-    END
-    LAYER
-        MAXSCALEDENOM 1048576
-        MINSCALEDENOM 524288
-        NAME 'rivers10'
-        TYPE LINE
-        GROUP 'default'
-        STATUS ON
-        PROJECTION
-            'init=epsg:4326'
-        END
-        PROCESSING 'LABEL_NO_CLIP=ON'
-        PROCESSING 'CLOSE_CONNECTION=DEFER'
-        METADATA
-            "wms_include_items" "all"
-        END
-        TEMPLATE 'blank.html'
-        DATA '10m_physical/ne_10m_rivers_lake_centerlines_scale_rank'
-        LABELITEM "name"
-        CLASS
-            EXPRESSION ([strokeweig] >= 0 AND [strokeweig] <= 0.2)
-            STYLE
-                COLOR '#6CAAC3'
-                WIDTH 3
-            END
-            LABEL
-                COLOR '#80C0FF'
-                OUTLINECOLOR 255 255 255
-                FONT 'scb'
-                TYPE truetype
-                SIZE 10
-                REPEATDISTANCE 100
-                MINDISTANCE 300
-                ANGLE FOLLOW
-                POSITION AUTO
-                PARTIALS FALSE
-            END
-        END
-        CLASS
-            EXPRESSION ([strokeweig] >= 0.200000001 AND [strokeweig] <= 0.35)
-            STYLE
-                COLOR '#6CAAC3'
-                WIDTH 4
-            END
-            LABEL
-                COLOR '#80C0FF'
-                OUTLINECOLOR 255 255 255
-                FONT 'scb'
-                TYPE truetype
-                SIZE 10
-                REPEATDISTANCE 100
-                MINDISTANCE 300
-                ANGLE FOLLOW
-                POSITION AUTO
-                PARTIALS FALSE
-            END
-        END
-        CLASS
-            EXPRESSION ([strokeweig] >= 0.350000001 AND [strokeweig] <= 0.6)
-            STYLE
-                COLOR '#6CAAC3'
-                WIDTH 6
-            END
-            LABEL
-                COLOR '#80C0FF'
-                OUTLINECOLOR 255 255 255
-                FONT 'scb'
-                TYPE truetype
-                SIZE 10
-                REPEATDISTANCE 100
-                MINDISTANCE 300
-                ANGLE FOLLOW
-                POSITION AUTO
-                PARTIALS FALSE
-            END
-        END
-        CLASS
-            EXPRESSION ([strokeweig] >= 0.600000001 AND [strokeweig] <= 1)
-            STYLE
-                COLOR '#6CAAC3'
-                WIDTH 8
-            END
-            LABEL
-                COLOR '#80C0FF'
-                OUTLINECOLOR 255 255 255
-                FONT 'scb'
-                TYPE truetype
-                SIZE 10
-                REPEATDISTANCE 100
-                MINDISTANCE 100
-                ANGLE FOLLOW
-                POSITION AUTO
-                PARTIALS FALSE
-            END
-        END
-        CLASS
-            EXPRESSION ([strokeweig] >= 1.000000001 AND [strokeweig] <= 2)
-            STYLE
-                COLOR '#6CAAC3'
-                WIDTH 10
-            END
-            LABEL
-                COLOR '#80C0FF'
-                OUTLINECOLOR 255 255 255
-                FONT 'scb'
-                TYPE truetype
-                SIZE 10
-                REPEATDISTANCE 100
-                MINDISTANCE 300
-                ANGLE FOLLOW
-                POSITION AUTO
-                PARTIALS FALSE
-            END
-        END
-    END
-    LAYER
-        MAXSCALEDENOM 1048576
-        MINSCALEDENOM 524288
         NAME 'ocean10'
         TYPE POLYGON
         GROUP 'default'
@@ -314,67 +176,6 @@
     LAYER
         MAXSCALEDENOM 1048576
         MINSCALEDENOM 524288
-        NAME 'roads10'
-        TYPE LINE
-        GROUP 'default'
-        STATUS ON
-        PROJECTION
-            'init=epsg:4326'
-        END
-        PROCESSING 'LABEL_NO_CLIP=ON'
-        PROCESSING 'CLOSE_CONNECTION=DEFER'
-        METADATA
-            "wms_include_items" "all"
-        END
-        TEMPLATE 'blank.html'
-        DATA '10m_cultural/ne_10m_roads'
-        CLASSITEM 'type'
-        LABELITEM 'name'
-        CLASS
-            EXPRESSION 'Major Highway'
-            STYLE
-                COLOR '#00EB00'
-            END
-            LABEL
-                COLOR 255 255 255
-                OUTLINECOLOR '#00EB00'
-                OUTLINEWIDTH 2
-                FONT 'scb'
-                TYPE truetype
-                SIZE 7
-                REPEATDISTANCE 100
-                MINDISTANCE 300
-                POSITION AUTO
-                PARTIALS FALSE
-            END
-        END
-        CLASS
-            EXPRESSION 'Secondary Highway'
-            STYLE
-                COLOR '#FF0000'
-            END
-            LABEL
-                COLOR 255 255 255
-                OUTLINECOLOR '#FF0000'
-                OUTLINEWIDTH 2
-                FONT 'scb'
-                TYPE truetype
-                SIZE 7
-                REPEATDISTANCE 100
-                MINDISTANCE 300
-                POSITION AUTO
-                PARTIALS FALSE
-            END
-        END
-        CLASS
-            STYLE
-                COLOR '#FF0000'
-            END
-        END
-    END
-    LAYER
-        MAXSCALEDENOM 1048576
-        MINSCALEDENOM 524288
         NAME 'populated_places10'
         TYPE POINT
         GROUP 'default'
@@ -420,6 +221,90 @@
     LAYER
         MAXSCALEDENOM 1048576
         MINSCALEDENOM 524288
+        NAME 'lac_mauricie10'
+        METADATA
+            "wms_title" "lac_mauricie"
+            "wms_name"   "lac_mauricie"
+            "wms_include_items" "all"
+        END
+        CONNECTION "host=localhost dbname=remabec user=synergis password=Syn3rGis! port=5432"
+        CONNECTIONTYPE POSTGIS
+        GROUP 'default'
+        STATUS ON
+        PROJECTION
+            'init=epsg:4326'
+        END
+        PROCESSING 'LABEL_NO_CLIP=ON'
+        PROCESSING 'CLOSE_CONNECTION=DEFER'
+        METADATA
+            "wms_include_items" "all"
+        END
+        TEMPLATE 'blank.html'
+        TYPE POLYGON
+        DATA "geom from (select * from lac_mauricie where AREA>='200.000000001' AND ter_co='EAU')as foo using unique fid using srid=4326"
+        LABELITEM 'toponyme'
+        CLASS
+            STYLE
+                COLOR '#C6E2F2'
+                OUTLINECOLOR '#469FC3'
+            END
+        END
+    END
+    LAYER
+        MAXSCALEDENOM 1048576
+        MINSCALEDENOM 524288
+        NAME 'chemin10'
+        METADATA
+            "wms_title" "chemin"
+            "wms_name"   "chemin"
+            "wms_include_items" "all"
+        END
+        CONNECTION "host=localhost dbname=remabec user=synergis password=Syn3rGis! port=5432"
+        CONNECTIONTYPE POSTGIS
+        GROUP 'default'
+        STATUS ON
+        PROJECTION
+            'init=epsg:4326'
+        END
+        PROCESSING 'LABEL_NO_CLIP=ON'
+        PROCESSING 'CLOSE_CONNECTION=DEFER'
+        METADATA
+            "wms_include_items" "all"
+        END
+        TEMPLATE 'blank.html'
+        TYPE LINE
+        DATA "geom from (select * from chemin where priorite='1')as foo using unique fid using srid=4326"
+        LABELITEM 'nom'
+        CLASS
+            EXPRESSION ('[priorite]' = '1' or'[priorite]' = '3' )
+            STYLE
+                COLOR 0 0 0
+                WIDTH 1
+            END
+            LABEL
+                COLOR 0 0 0
+                OUTLINECOLOR 255 255 255
+                FONT 'scb'
+                TYPE truetype
+                SIZE 8
+                REPEATDISTANCE 100
+                MINDISTANCE 300
+                ANGLE FOLLOW
+                POSITION AUTO
+                PARTIALS FALSE
+            END
+        END
+        CLASS
+            EXPRESSION ('[priorite]' = '4' or'[priorite]' = '5' or'[priorite]' = '22'or'[priorite]' = '33')
+            STYLE
+                COLOR 0 0 0
+                WIDTH 0.8
+            END
+        END
+    END
+    LAYER
+        MAXSCALEDENOM 1048576
+        MINSCALEDENOM 524288
         NAME 'uaf_region_0410'
         METADATA
             "wms_title" "uaf_region_04"
@@ -441,12 +326,89 @@
         TEMPLATE 'blank.html'
         TYPE POLYGON
         DATA "geom from uaf_region_04 using unique fid using srid=4326"
+        CLASSITEM 'no_uaf'
         CLASS
+            EXPRESSION '041-51'
             STYLE
                 COLOR '#C2F1C2'
-                OUTLINECOLOR '#55AA55'
-                WIDTH 1
-                OPACITY 50
+                OPACITY 30
+            END
+        END
+        CLASS
+            EXPRESSION '042-51'
+            STYLE
+                COLOR '#C7C050'
+                OPACITY 30
+            END
+        END
+        CLASS
+            EXPRESSION '043-51'
+            STYLE
+                COLOR '#FF9F37'
+                OPACITY 30
+            END
+        END
+        CLASS
+            EXPRESSION '043-52'
+            STYLE
+                COLOR '#83A0D0'
+                OPACITY 30
+            END
+        END
+    END
+    LAYER
+        MAXSCALEDENOM 1048576
+        MINSCALEDENOM 524288
+        NAME 'pts_chantier10'
+        METADATA
+            "wms_title" "pts_chantier"
+            "wms_name"   "pts_chantier"
+            "wms_include_items" "all"
+        END
+        CONNECTION "host=localhost dbname=remabec user=synergis password=Syn3rGis! port=5432"
+        CONNECTIONTYPE POSTGIS
+        GROUP 'default'
+        STATUS ON
+        PROJECTION
+            'init=epsg:4326'
+        END
+        PROCESSING 'LABEL_NO_CLIP=ON'
+        PROCESSING 'CLOSE_CONNECTION=DEFER'
+        METADATA
+            "wms_include_items" "all"
+        END
+        TEMPLATE 'blank.html'
+        TYPE POINT
+        DATA "geom from pts_chantier using unique fid using srid=4326"
+        LABELITEM 'secteur'
+        CLASS
+            STYLE
+                SYMBOL 'circle'
+                COLOR '#FE1218'
+                OUTLINECOLOR 255 255 255
+                SIZE 10
+            END
+            STYLE
+                SYMBOL 'circle'
+                COLOR 255 255 255
+                SIZE 5
+            END
+            STYLE
+                SYMBOL 'circle'
+                COLOR '#FE1218'
+                SIZE 2
+            END
+            LABEL
+                COLOR '#FE1218'
+                OUTLINECOLOR 255 255 255
+                FONT 'scb'
+                TYPE truetype
+                SIZE 10
+                REPEATDISTANCE 100
+                MINDISTANCE 300
+                ANGLE FOLLOW
+                POSITION AUTO
+                PARTIALS FALSE
             END
         END
     END

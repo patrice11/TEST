@@ -47,30 +47,6 @@
     LAYER
         MAXSCALEDENOM 16777216
         MINSCALEDENOM 8388608
-        NAME 'lakes6'
-        TYPE POLYGON
-        GROUP 'default'
-        STATUS ON
-        PROJECTION
-            'init=epsg:4326'
-        END
-        PROCESSING 'LABEL_NO_CLIP=ON'
-        PROCESSING 'CLOSE_CONNECTION=DEFER'
-        METADATA
-            "wms_include_items" "all"
-        END
-        TEMPLATE 'blank.html'
-        DATA '50m_physical/ne_50m_lakes'
-        CLASS
-            STYLE
-                COLOR '#C6E2F2'
-                OUTLINECOLOR '#469FC3'
-            END
-        END
-    END
-    LAYER
-        MAXSCALEDENOM 16777216
-        MINSCALEDENOM 8388608
         NAME 'rivers6'
         TYPE LINE
         GROUP 'default'
@@ -167,6 +143,30 @@
                 ANGLE FOLLOW
                 POSITION AUTO
                 PARTIALS FALSE
+            END
+        END
+    END
+    LAYER
+        MAXSCALEDENOM 16777216
+        MINSCALEDENOM 8388608
+        NAME 'lakes6'
+        TYPE POLYGON
+        GROUP 'default'
+        STATUS ON
+        PROJECTION
+            'init=epsg:4326'
+        END
+        PROCESSING 'LABEL_NO_CLIP=ON'
+        PROCESSING 'CLOSE_CONNECTION=DEFER'
+        METADATA
+            "wms_include_items" "all"
+        END
+        TEMPLATE 'blank.html'
+        DATA '50m_physical/ne_50m_lakes'
+        CLASS
+            STYLE
+                COLOR '#C6E2F2'
+                OUTLINECOLOR '#469FC3'
             END
         END
     END

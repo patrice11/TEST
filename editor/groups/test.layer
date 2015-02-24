@@ -1,0 +1,30 @@
+LAYER {
+        13-16 {
+        NAME: 'cutover_autre'
+        METADATA {{
+              "wms_title" "cutover_autre"
+              "wms_name"   "cutover_autre"
+              "wms_include_items" "all"
+        }}
+        @connection
+        @layerconfig
+        TYPE: POLYGON
+        DATA:"geom from cutover_autre using unique fid using srid=4326"
+        CLASSITEM:'traitement'
+         CLASS {
+             EXPRESSION : ('[traitement]' = 'CPRS_U' or '[traitement]' = 'CPRS_U-BOUQ' or '[traitement]' = 'CPPTM_DIS' or '[traitement]' = 'RML')
+             STYLE {
+                 SYMBOL: 'hatchsymbol'  
+                 COLOR: '#2BBC2B'
+                 SIZE: 10
+                 ANGLE: 45
+            }
+            STYLE {
+                 SYMBOL: 'hatchsymbol'  
+                 COLOR:  '#2BBC2B'
+                 SIZE: 10
+                 ANGLE: 135
+            }        
+        }
+    }
+}

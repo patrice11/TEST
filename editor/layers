@@ -51,28 +51,8 @@ LAYER {
         }
     }
 }
-
 LAYER {
-    3-10 {
-        NAME: 'lakes'
-        TYPE: POLYGON
-        @layerconfig
-        DATA {
-            1-4: '110m_physical/ne_110m_lakes'
-            5-10: '50m_physical/ne_50m_lakes'
-            11-16: '10m_physical/ne_10m_lakes'		
-		}
-        CLASS {
-            STYLE {
-                COLOR: @watercolor
-                OUTLINECOLOR: @watercolor_ol
-            }
-        }
-    }
-}
-
-LAYER {
-    5-10 {
+    5-8 {
         NAME: 'rivers'
         TYPE: LINE
         @layerconfig
@@ -203,7 +183,24 @@ LAYER {
         }
     }
 }
-
+LAYER {
+    3-8 {
+        NAME: 'lakes'
+        TYPE: POLYGON
+        @layerconfig
+        DATA {
+            1-4: '110m_physical/ne_110m_lakes'
+            5-10: '50m_physical/ne_50m_lakes'
+            11-16: '10m_physical/ne_10m_lakes'		
+		}
+        CLASS {
+            STYLE {
+                COLOR: @watercolor
+                OUTLINECOLOR: @watercolor_ol
+            }
+        }
+    }
+}
 
 
 
@@ -322,7 +319,7 @@ LAYER {
 
 
 LAYER {
-    6-16 {
+    6-8 {
         NAME: 'roads'
         TYPE: LINE
         @layerconfig
@@ -465,7 +462,7 @@ LAYER {
                 DATA:"geom from aire_protege using unique fid using srid=4326"
          CLASS {
              STYLE {
-              COLOR: 85 255 255
+              COLOR: '#44DD2C'
             }
         }
     }
@@ -494,6 +491,230 @@ LAYER {
                  COLOR: '#9F9F9F'         
             }
         }
+    }
+}
+LAYER {
+        12-16 {
+        NAME: 'plan_depart1516'
+        TYPE: POLYGON    
+        METADATA {{
+              "wms_title" "plan_depart1516"
+              "wms_name"   "plan_depart1516"
+              "wms_include_items" "all"
+        }}
+        @connection
+        @layerconfig
+        DATA: "geom from plan_depart1516 using unique fid using srid=4326" 
+        CLASSITEM: 'trait_auto'
+        CLASS{
+            EXPRESSION: 'RPLB_500 OUI' 
+            STYLE{
+                  COLOR: '#E7008C'
+                  OUTLINECOLOR:'#E7008C'
+                  WIDTH: 0.2
+             }      
+        }
+        CLASS{
+            EXPRESSION: 'CPICP-PG OUI' 
+            STYLE{
+                  COLOR: '#830AC6'
+                  OUTLINECOLOR:'#E7008C'
+                  WIDTH: 0.2    
+             }      
+        }
+        CLASS{
+            EXPRESSION: 'CPRS_U-BOUQ OUI'
+            STYLE{
+                  COLOR: '#F693A0'
+                  OUTLINECOLOR:'#E7008C'
+                  WIDTH: 0.2
+             }      
+        }
+        CLASS{
+            EXPRESSION: 'CPRS_U OUI' 
+            STYLE{
+                  COLOR: '#FFFCA7'
+                  OUTLINECOLOR:'#E7008C'
+                  WIDTH: 0.2
+             }      
+        }
+        CLASS{
+            EXPRESSION: 'CPR_BA-ENS OUI' 
+            STYLE{
+                  COLOR: '#CDD54A'
+                  OUTLINECOLOR:'#E7008C'
+                  WIDTH: 0.2
+             }      
+        }
+        CLASS{
+            EXPRESSION: 'CPIRL_BA-ENS OUI'
+            STYLE{
+                  COLOR: 88 221 150
+                  OUTLINECOLOR:'#E7008C'
+                  WIDTH: 0.2
+             }      
+        }
+        CLASS{
+            EXPRESSION: 'CPIRL_U-MUL OUI'
+            STYLE{
+                  COLOR: '#80C4D0'
+                  OUTLINECOLOR:'#E7008C'
+                  WIDTH: 0.2
+            }
+        }
+        CLASS{
+            EXPRESSION: 'EJ OUI'
+            STYLE{
+                  COLOR: '#CFAECA'
+                  OUTLINECOLOR:'#E7008C'
+                  WIDTH: 0.2
+            }
+        }
+        CLASS{
+            EXPRESSION: 'CPPTM_DIS OUI'
+            STYLE{
+                  COLOR: '#FFF56C'
+                  OUTLINECOLOR:'#E7008C'
+                  WIDTH: 0.2
+            }
+        }
+        CLASS{
+            EXPRESSION: 'CPIRL_BA-ENS NON'
+            STYLE{
+                  COLOR: 88 221 150
+                  OUTLINECOLOR:'#E7008C'
+                  WIDTH: 0.2
+            }
+            STYLE {    
+                 SYMBOL: 'hatchsymbol'  
+                 COLOR: '#FF2301'
+                 SIZE: 10
+                 ANGLE: 45 
+            }
+        }
+        CLASS{
+            EXPRESSION: 'CPIRL_U-MUL NON'
+            STYLE{
+                  COLOR: '#80C4D0'
+                  OUTLINECOLOR:'#E7008C'
+                  WIDTH: 0.2
+            }
+            STYLE {    
+                 SYMBOL: 'hatchsymbol'  
+                 COLOR: '#FF2301'
+                 SIZE: 10
+                 ANGLE: 45 
+            }
+        }
+        CLASS{
+            EXPRESSION: 'CPR_BA-ENS NON' 
+            STYLE{
+                  COLOR: '#CDD54A'
+                  OUTLINECOLOR:'#E7008C'
+                  WIDTH: 0.2
+            }
+            STYLE {
+                 SYMBOL: 'hatchsymbol'  
+                 COLOR: '#FF2301'
+                 SIZE: 10
+                 ANGLE: 45
+            }        
+        }
+        CLASS{
+            EXPRESSION: 'CPRS_U NON' 
+            STYLE{
+                  COLOR: '#FFFCA7'
+                  OUTLINECOLOR:'#E7008C'
+                  WIDTH: 0.2
+            }
+            STYLE {
+                 SYMBOL: 'hatchsymbol'  
+                 COLOR: '#FF2301'
+                 SIZE: 10
+                 ANGLE: 45
+            }        
+        }
+        CLASS{
+            EXPRESSION: 'CPRS_U-BOUQ NON' 
+            STYLE{
+                  COLOR: '#F693A0'
+                  OUTLINECOLOR:'#E7008C'
+                  WIDTH: 0.2
+            }
+            STYLE {
+                 SYMBOL: 'hatchsymbol'  
+                 COLOR: '#FF2301'
+                 SIZE: 10
+                 ANGLE: 45
+            }        
+        }
+        CLASS{
+            EXPRESSION: 'RPLB_500 NON' 
+            STYLE{
+                  COLOR: '#E7008C'
+                  OUTLINECOLOR:'#E7008C'
+                  WIDTH: 0.2
+            }
+            STYLE {
+                 SYMBOL: 'hatchsymbol'  
+                 COLOR: '#2025E2'
+                 SIZE: 10
+                 ANGLE: 90
+            }
+            STYLE {
+                 SYMBOL: 'hatchsymbol'  
+                 COLOR: '#2025E2'
+                 SIZE: 10
+                 ANGLE: 0
+            }        
+        }
+        CLASS{
+            EXPRESSION: 'CPICP-PG NON' 
+            STYLE{
+                  COLOR: '#830AC6'
+                  OUTLINECOLOR:'#E7008C'
+                  WIDTH: 0.2    
+            }
+            STYLE {
+                 SYMBOL: 'hatchsymbol'  
+                 COLOR: '#FF2301'
+                 SIZE: 10
+                 ANGLE: 45
+            }        
+        }
+        CLASS{
+            EXPRESSION: 'EJ NON'
+            STYLE{
+                  COLOR: '#CFAECA'
+                  OUTLINECOLOR:'#E7008C'
+                  WIDTH: 0.2
+            }
+            STYLE {
+                 SYMBOL: 'hatchsymbol'  
+                 COLOR: '#FF2301'
+                 SIZE: 10
+                 ANGLE: 45
+            }        
+        }
+        CLASS{
+            EXPRESSION: 'CPPTM_DIS NON'
+            STYLE{
+                  COLOR: '#FFE56C'
+                  OUTLINECOLOR:'#E7008C'
+                  WIDTH: 0.2
+            }
+            STYLE {
+                 SYMBOL: 'hatchsymbol'  
+                 COLOR: '#FF2301'
+                 SIZE: 10
+                 ANGLE: 45
+            }
+        }
+        CLASS{
+            STYLE{
+                  COLOR: '#31E047'
+             }
+         }   
     }
 }
 LAYER {
@@ -536,7 +757,7 @@ LAYER {
         }
     }
 }
-LAYER {
+/*LAYER {
         13-16 {
         NAME: 'lac_mauricie'
         METADATA {{
@@ -558,7 +779,45 @@ LAYER {
                 13-16 {
                 	COLOR: @watercolor_lbl
                 	OUTLINECOLOR: 255 255 255
-                	FONT: 'scb'
+                	FONT: 'arb'
+                	TYPE: truetype
+                	SIZE: 8
+                    REPEATDISTANCE: 100
+                    MINDISTANCE: 300
+                	ANGLE: FOLLOW
+                	POSITION: AUTO
+                	PARTIALS: FALSE
+                }        
+            }            
+        }
+    }
+}*/
+LAYER {
+        8-16 {
+        NAME: 'lac_mauricie'
+        METADATA {{
+              "wms_title" "lac_mauricie"
+              "wms_name"   "lac_mauricie"
+              "wms_include_items" "all"
+        }}
+        @connection
+        @layerconfig
+        TYPE: POLYGON
+        DATA{
+             8-13: "geom from (select * from lac_mauricie where AREA>='200.000000001' AND ter_co='EAU')as foo using unique fid using srid=4326"
+             13-16: "geom from lac_mauricie using unique fid using srid=4326"
+        }
+        LABELITEM: 'toponyme'
+        CLASS {
+            STYLE {
+                      COLOR: @watercolor
+                  OUTLINECOLOR:'#469FC3'                  
+             }
+            LABEL {
+                13-16 {
+                	COLOR: @watercolor_lbl
+                	OUTLINECOLOR: 255 255 255
+                	FONT: 'arb'
                 	TYPE: truetype
                 	SIZE: 8
                     REPEATDISTANCE: 100
@@ -613,8 +872,304 @@ LAYER {
         }   
     }
 }*/
-
-
+LAYER {
+        13-15 {
+        NAME: 'lte_zec_pourvoirie'
+        METADATA {{
+              "wms_title" "lte_zec_pourvoirie"
+              "wms_name"   "lte_zec_pourvoirie"
+              "wms_include_items" "all"
+        }}
+        @connection
+        @layerconfig
+        TYPE: POLYGON
+        DATA:"geom from lte_zec_pourvoirie using unique fid using srid=4326"
+        LABELITEM: 'nom'
+            CLASS {
+             STYLE {
+              OUTLINECOLOR: '#286C12'
+              WIDTH: 1
+            }
+            LABEL {
+                13-16 {
+                	COLOR: '#286C12'
+                	OUTLINECOLOR: 255 255 255
+                	FONT: 'scb'
+                	TYPE: truetype
+                	SIZE: 8
+                    REPEATDISTANCE: 100
+                    MINDISTANCE: 300
+                	ANGLE: FOLLOW
+                	POSITION: AUTO
+                	PARTIALS: FALSE
+                }    
+            }          
+        }
+    }
+}
+LAYER {
+        12-16 {
+        NAME: 'plch_depart1516'
+        TYPE: LINE    
+        METADATA {{
+              "wms_title" "plch_depart1516"
+              "wms_name"   "plch_depart1516"
+              "wms_include_items" "all"
+        }}
+        @connection
+        @layerconfig
+        DATA: "geom from plch_depart1516 using unique fid using srid=4326" 
+        CLASSITEM: 'autorise'
+        CLASS{
+            EXPRESSION: 'OUI' 
+            STYLE{
+                  COLOR: '#180A0D'
+                  WIDTH: 1.5   
+             }      
+        }
+        CLASS{
+            EXPRESSION: 'NON'
+            STYLE{
+                  COLOR: '#180A0D'
+                  WIDTH: 2
+                  PATTERN {{
+						1 4
+                	}}
+             }      
+        }   
+    }
+}
+LAYER {
+        13-16 {
+        NAME: 'corridor_routier'
+        TYPE: POLYGON    
+        METADATA {{
+              "wms_title" "corridor_routier"
+              "wms_name"   "corridor_routier"
+              "wms_include_items" "all"
+        }}
+        @connection
+        @layerconfig
+        DATA: "geom from corridor_routier using unique fid using srid=4326" 
+        CLASS{ 
+            STYLE{
+                  OUTLINECOLOR: '#FE1218'
+                  WIDTH: 1.5   
+            } 
+            STYLE {
+                 SYMBOL: 'hatchsymbol'  
+                 COLOR: '#FE1218'
+                 SIZE: 10
+                 ANGLE: 45
+            }
+        }  
+    }
+}
+LAYER {
+        9-16 {
+        NAME: 'chemin'
+        METADATA {{
+              "wms_title" "chemin"
+              "wms_name"   "chemin"
+              "wms_include_items" "all"
+        }}
+        @connection
+        @layerconfig
+        TYPE: LINE
+        DATA{
+             8-10: "geom from (select * from chemin where priorite='1')as foo using unique fid using srid=4326"
+             11-12: "geom from (select * from chemin where priorite='1'or priorite='3')as foo using unique fid using srid=4326"
+             13-16: "geom from chemin using unique fid using srid=4326"
+        }
+        LABELITEM:'nom' 
+        CLASS {
+            EXPRESSION: ('[priorite]' = '1' or'[priorite]' = '3' )
+            STYLE{
+                  COLOR: 0 0 0
+                  WIDTH: 1
+            }
+            LABEL {
+                8-16 {
+                	COLOR: 0 0 0
+                	OUTLINECOLOR: 255 255 255
+                	FONT: 'scb'
+                	TYPE: truetype
+                	SIZE: 8
+                    REPEATDISTANCE: 100
+                    MINDISTANCE: 300
+                	ANGLE: FOLLOW
+                	POSITION: AUTO
+                	PARTIALS: FALSE
+                }    
+            }          
+        }
+        CLASS {
+            EXPRESSION: ('[priorite]' = '4' or'[priorite]' = '5' or'[priorite]' = '22'or'[priorite]' = '33')
+            STYLE {
+                  COLOR: 0 0 0
+                  WIDTH: 0.8
+             }
+            LABEL {
+                15-16 {
+                	COLOR: 0 0 0
+                	OUTLINECOLOR: 255 255 255
+                	FONT: 'scb'
+                	TYPE: truetype
+                	SIZE: 8
+                    REPEATDISTANCE: 100
+                    MINDISTANCE: 300
+                	ANGLE: FOLLOW
+                	POSITION: AUTO
+                	PARTIALS: FALSE
+                }    
+            }          
+        }
+    }
+}
+LAYER {
+        13-14 {
+        NAME: 'affectation'
+        TYPE: POINT
+        METADATA {{
+              "wms_title" "affectation"
+              "wms_name"   "affectation"
+              "wms_include_items" "all"
+        }}
+        @connection
+        @layerconfig
+        DATA:"geom from affectation using unique fid using srid=4326"
+        CLASS {
+            STYLE {
+                  SYMBOL:'circle'  
+                  COLOR: 0 0 0
+                  SIZE: 6
+            }
+        }
+    }
+}
+LAYER {
+        15-16 {
+        NAME: 'affectation'
+        TYPE: POINT
+        METADATA {{
+              "wms_title" "affectation"
+              "wms_name"   "affectation"
+              "wms_include_items" "all"
+        }}
+        @connection
+        @layerconfig
+        DATA:"geom from affectation using unique fid using srid=4326"
+        CLASSITEM: 'aff_appell'
+        CLASS {
+            EXPRESSION: ('[aff_appell]' = 'Camping rustique')
+            STYLE {
+                13-16{
+                  SYMBOL:'circle'  
+                  COLOR: 255 255 255
+                  OUTLINECOLOR: 0 0 0
+                  OUTLINEWIDTH: 1
+                  SIZE: 15
+                  }
+              }
+            STYLE {
+                13-16{
+                  SYMBOL:'camping'
+                  SIZE: 10
+              }
+           }
+        }
+        CLASS {
+            EXPRESSION: ('[aff_appell]' = 'Abri sommaire'or'[aff_appell]' = 'Abri temporaire de trappeur autochtone' )
+            STYLE {
+                  SYMBOL:'square'  
+                  COLOR: 255 255 255
+                  SIZE: 10
+              }
+            STYLE {
+                  SYMBOL:'abri'
+                  SIZE: 11
+              }
+        }
+        CLASS {
+            EXPRESSION: ('[aff_appell]' = 'Aire de pique-nique non RNI')
+            STYLE {
+                  SYMBOL:'square'  
+                  COLOR: 255 255 255
+                  SIZE: 20
+              }
+            STYLE {
+                  SYMBOL:'Pique-nique RNI'
+                  SIZE: 19
+              }
+        }
+        CLASS {
+            EXPRESSION: ('[aff_appell]' = 'Terrain sous bail')
+            STYLE {
+                  SYMBOL:'square'  
+                  COLOR: '#BCEAA6'
+                  SIZE: 12
+                  OUTLINECOLOR: 0 0 0
+                  WIDTH: 1.5
+              }
+        }
+        CLASS {
+            EXPRESSION: ('[aff_appell]' = 'Camp de trappeur non autochtone')
+            STYLE {
+                  SYMBOL:'camp2'  
+                  COLOR: '#BCEAA6'
+                  SIZE: 12
+                  OUTLINECOLOR: 0 0 0
+                  WIDTH: 1.5
+              }
+        }
+        CLASS {
+            EXPRESSION: ('[aff_appell]' = 'Camp forestier')
+            STYLE {
+                  SYMBOL:'square'  
+                  COLOR: 255 255 255
+                  SIZE: 18
+            }
+            STYLE {
+                  SYMBOL:'camp_forestier'
+                  COLOR: 0 0 0
+                  SIZE: 18
+            }
+        }
+        CLASS {
+            EXPRESSION: ('[aff_appell]' = 'Camp de pourvoirie')
+            STYLE {
+                  SYMBOL:'circle'  
+                  COLOR: 255 255 255
+                  SIZE: 25
+            }
+            STYLE {
+                  SYMBOL:'pourvoirie'
+                  COLOR: 0 0 0
+                  SIZE: 25
+            }
+        }
+        CLASS {
+            EXPRESSION: ('[aff_appell]' = 'Site de vill%')
+            STYLE {
+                  SYMBOL:'site'
+                  COLOR: 0 0 0
+                  SIZE: 25
+            }
+        }
+        CLASS {
+            STYLE {
+                  SYMBOL:'circle'  
+                  COLOR: 255 255 255
+                  SIZE: 15
+            }
+            STYLE {
+                  SYMBOL:'pepiniere'
+                  COLOR: 0 0 0
+                  SIZE: 25
+            }
+        }   
+    }
+}
 /*LAYER {
         13-16 {
         NAME: 'peuplement_global_mauricie'
@@ -725,17 +1280,86 @@ LAYER {
         @connection
         @layerconfig
         TYPE: POLYGON
-                DATA:"geom from uaf_region_04 using unique fid using srid=4326"
-         CLASS {
+        DATA:"geom from uaf_region_04 using unique fid using srid=4326"
+        CLASSITEM: 'no_uaf'
+        CLASS {
+            EXPRESSION: '041-51'
             STYLE {
             COLOR: '#C2F1C2'
-            OUTLINECOLOR: '#55AA55'
-            WIDTH: 1
-            OPACITY: 50
+            OPACITY: 30
+            }
+        }
+        CLASS {
+            EXPRESSION: '042-51'
+            STYLE {
+            COLOR: '#C7C050'
+            OPACITY: 30
+            }
+        }
+        CLASS {
+            EXPRESSION: '043-51'
+            STYLE {
+            COLOR: '#FF9F37'
+            OPACITY: 30
+            }
+        }
+        CLASS {
+            EXPRESSION: '043-52'
+            STYLE {
+            COLOR: '#83A0D0'
+            OPACITY: 30
             }
         }
     }
 }
+LAYER {
+        8-13 {
+        NAME: 'pts_chantier'
+        METADATA {{
+              "wms_title" "pts_chantier"
+              "wms_name"   "pts_chantier"
+              "wms_include_items" "all"
+        }}
+        @connection
+        @layerconfig
+        TYPE: POINT
+        DATA:"geom from pts_chantier using unique fid using srid=4326"
+        LABELITEM: 'secteur'
+        CLASS {
+            STYLE {
+             SYMBOL:'circle'
+             COLOR: '#FE1218'
+             OUTLINECOLOR: 255 255 255
+             SIZE: 10
+            }
+             STYLE {
+             SYMBOL:'circle'
+             COLOR: 255 255 255
+             SIZE: 5
+            }
+            STYLE {
+             SYMBOL:'circle'
+             COLOR: '#FE1218'
+             SIZE: 2
+            }
+            LABEL {
+                8-13 {
+                	COLOR: '#FE1218'
+                	OUTLINECOLOR: 255 255 255
+                	FONT: 'scb'
+                	TYPE: truetype
+                	SIZE: 10
+                    REPEATDISTANCE: 100
+                    MINDISTANCE: 300
+                	ANGLE: FOLLOW
+                	POSITION: AUTO
+                	PARTIALS: FALSE
+                }    
+            }          
+        }
+    }
+}
+
 LAYER {
         7-12 {
         NAME: 'lte_mauricie'
@@ -757,7 +1381,36 @@ LAYER {
     }
 }
 
-
+LAYER {
+        13-16 {
+        NAME: 'cutover_autre'
+        METADATA {{
+              "wms_title" "cutover_autre"
+              "wms_name"   "cutover_autre"
+              "wms_include_items" "all"
+        }}
+        @connection
+        @layerconfig
+        TYPE: POLYGON
+        DATA:"geom from cutover_autre using unique fid using srid=4326"
+        CLASSITEM:'traitement'
+         CLASS {
+             EXPRESSION : ('[traitement]' = 'CPRS_U' or '[traitement]' = 'CPRS_U-BOUQ' or '[traitement]' = 'CPPTM_DIS' or '[traitement]' = 'RML')
+             STYLE {
+                 SYMBOL: 'hatchsymbol'  
+                 COLOR: '#2BBC2B'
+                 SIZE: 10
+                 ANGLE: 45
+            }
+            STYLE {
+                 SYMBOL: 'hatchsymbol'  
+                 COLOR:  '#2BBC2B'
+                 SIZE: 10
+                 ANGLE: 135
+            }        
+        }
+    }
+}
 /*LAYER {
         13-16 {
         NAME: 'peuplement_global_mauricie'
@@ -791,4 +1444,5 @@ LAYER {
          }
      }
 }*/
+
 }

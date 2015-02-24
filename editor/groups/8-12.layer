@@ -9,17 +9,86 @@ LAYER {
         @connection
         @layerconfig
         TYPE: POLYGON
-                DATA:"geom from uaf_region_04 using unique fid using srid=4326"
-         CLASS {
+        DATA:"geom from uaf_region_04 using unique fid using srid=4326"
+        CLASSITEM: 'no_uaf'
+        CLASS {
+            EXPRESSION: '041-51'
             STYLE {
             COLOR: '#C2F1C2'
-            OUTLINECOLOR: '#55AA55'
-            WIDTH: 1
-            OPACITY: 50
+            OPACITY: 30
+            }
+        }
+        CLASS {
+            EXPRESSION: '042-51'
+            STYLE {
+            COLOR: '#C7C050'
+            OPACITY: 30
+            }
+        }
+        CLASS {
+            EXPRESSION: '043-51'
+            STYLE {
+            COLOR: '#FF9F37'
+            OPACITY: 30
+            }
+        }
+        CLASS {
+            EXPRESSION: '043-52'
+            STYLE {
+            COLOR: '#83A0D0'
+            OPACITY: 30
             }
         }
     }
 }
+LAYER {
+        8-13 {
+        NAME: 'pts_chantier'
+        METADATA {{
+              "wms_title" "pts_chantier"
+              "wms_name"   "pts_chantier"
+              "wms_include_items" "all"
+        }}
+        @connection
+        @layerconfig
+        TYPE: POINT
+        DATA:"geom from pts_chantier using unique fid using srid=4326"
+        LABELITEM: 'secteur'
+        CLASS {
+            STYLE {
+             SYMBOL:'circle'
+             COLOR: '#FE1218'
+             OUTLINECOLOR: 255 255 255
+             SIZE: 10
+            }
+             STYLE {
+             SYMBOL:'circle'
+             COLOR: 255 255 255
+             SIZE: 5
+            }
+            STYLE {
+             SYMBOL:'circle'
+             COLOR: '#FE1218'
+             SIZE: 2
+            }
+            LABEL {
+                8-13 {
+                	COLOR: '#FE1218'
+                	OUTLINECOLOR: 255 255 255
+                	FONT: 'scb'
+                	TYPE: truetype
+                	SIZE: 10
+                    REPEATDISTANCE: 100
+                    MINDISTANCE: 300
+                	ANGLE: FOLLOW
+                	POSITION: AUTO
+                	PARTIALS: FALSE
+                }    
+            }          
+        }
+    }
+}
+
 LAYER {
         7-12 {
         NAME: 'lte_mauricie'

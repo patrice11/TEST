@@ -5,6 +5,18 @@ SYMBOL
     filled true
 END
 SYMBOL
+  NAME "square"
+  TYPE vector
+  FILLED true
+  POINTS
+    0 0
+    0 1
+    1 1
+    1 0
+    0 0
+  END
+END
+SYMBOL
   NAME "hatchsymbol"
   TYPE hatch
 END
@@ -43,3 +55,86 @@ SYMBOL
   TYPE pixmap
   IMAGE "o-flag-trans.png"
 END # SYMBOL
+
+SYMBOL
+	NAME "camping"
+	TYPE svg
+	IMAGE "../symbol/campground.svg"
+END
+SYMBOL
+	NAME "abri"
+	TYPE svg
+	IMAGE "../symbol/abris_sommaire.svg"
+END
+SYMBOL
+	NAME "bouquet"
+	TYPE svg
+	IMAGE "../symbol/Pepiniere_forestiere_arboretum.svg"
+END
+SYMBOL
+	NAME "Camp"
+	TYPE svg
+	IMAGE "../symbol/Camp_forestier2.svg"
+END
+SYMBOL
+	NAME "Pique-nique RNI"
+	TYPE svg
+	IMAGE "../symbol/Aire_pique_nique_non_RNI.svg"
+END
+SYMBOL
+	NAME "Halte routiere"
+	TYPE svg
+	IMAGE "../symbol/Halte_routiere.svg"
+END
+SYMBOL
+	NAME "Descente"
+	TYPE svg
+	IMAGE "../symbol/descente_mise_eau.svg"
+END
+SYMBOL
+   NAME       "site"
+   TYPE       TRUETYPE
+   FONT       "ECN"
+   CHARACTER  "&#215;"
+END
+SYMBOL
+    NAME "camp2"
+	TYPE pixmap
+	IMAGE "../symbol/Camp_trappeur_non_autochtone.png"
+END
+SYMBOL
+   NAME       "pourvoirie"
+   TYPE       TRUETYPE
+   FONT       "EEHS"
+   CHARACTER  "&#101;"
+END
+SYMBOL
+   NAME       "camp_forestier"
+   TYPE       TRUETYPE
+   FONT       "EBN"
+   CHARACTER  "&#62;"
+END
+SYMBOL
+   NAME       "camping_amenage"
+   TYPE       TRUETYPE
+   FONT       "EF1"
+   CHARACTER  "&#188;"
+END
+SYMBOL
+   NAME       "halte_routiere2"
+   TYPE       TRUETYPE
+   FONT       "EF1"
+   CHARACTER  "&#53;"
+END
+SYMBOL
+   NAME       "poste_accueil"
+   TYPE       TRUETYPE
+   FONT       "EEI"
+   CHARACTER  "&#56;"
+END
+SYMBOL
+   NAME       "pepiniere"
+   TYPE       TRUETYPE
+   FONT       "EEHS"
+   CHARACTER  "&#106;"
+END
